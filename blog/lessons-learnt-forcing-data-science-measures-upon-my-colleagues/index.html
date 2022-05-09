@@ -6,119 +6,287 @@
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="author" content="Rob de Wit">
-		<title>Lessons learnt forcing data science measures upon my colleagues</title>
+		<title>Lessons learnt forcing data science measures upon my
+		colleagues</title>
 		<link rel="stylesheet" href="../../css/style.css" />
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
-		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐘</text></svg>">
+		<link
+		href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,700&display=swap"
+		rel="stylesheet">
+		<link
+		href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap"
+		rel="stylesheet">
+		<link rel="icon" href="data:image/svg+xml,<svg
+		xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text
+		y=%22.9em%22 font-size=%2290%22>🐘</text></svg>">
 
 		<!-- Metadata -->
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
-	  <meta name="description" content="Applying a bunch of data science measures to an entire business process led me to learn a lot about communicating data effectively.">
-	  <meta name="keywords" content="Communication, explanation, classification measures, data science, KPI">
-		<meta name="publish_date" property="og:publish_date" content="2021-12-14">
+	  <meta name="description" content="Applying a bunch of data science
+	  measures to an entire business process led me to learn a lot about
+	  communicating data effectively.">
+	  <meta name="keywords" content="Communication, explanation, classification
+	  measures, data science, KPI">
+		<meta name="publish_date" property="og:publish_date"
+		content="2021-12-14">
 
 
 	  <!-- Open graph meta tags -->
-	  <meta property="og:url" content="https://robdewit.nl/blog/lessons-learnt-forcing-data-science-measures-upon-my-colleagues/index.html">
+	  <meta property="og:url"
+	  content="https://robdewit.nl/blog/lessons-learnt-forcing-data-science-measures-upon-my-colleagues/index.html">
 	  <meta property="og:type" content="blog">
-	  <meta property="og:title" content="Lessons learnt forcing data science measures upon my colleagues">
+	  <meta property="og:title" content="Lessons learnt forcing data science
+	  measures upon my colleagues">
 	  <meta property="og:site_name" content="Rob de Wit">
-	  <meta property="og:description" content="Applying a bunch of data science measures to an entire business process led me to learn a lot about communicating data effectively.">
-	  <meta property="og:image" content="https://robdewit.nl/blog/lessons-learnt-forcing-data-science-measures-upon-my-colleagues/img/og-image.jpg">
+	  <meta property="og:description" content="Applying a bunch of data science
+	  measures to an entire business process led me to learn a lot about
+	  communicating data effectively.">
+	  <meta property="og:image"
+	  content="https://robdewit.nl/blog/lessons-learnt-forcing-data-science-measures-upon-my-colleagues/img/og-image.jpg">
 
 		<!-- Twitter Meta Tags -->
 		<meta name="twitter:card" content="summary_large_image">
 		<meta property="twitter:domain" content="robdewit.nl">
-		<meta property="twitter:url" content="https://robdewit.nl/blog/lessons-learnt-forcing-data-science-measures-upon-my-colleagues/index.html">
-		<meta name="twitter:title" content="Lessons learnt forcing data science measures upon my colleagues">
-		<meta name="twitter:description" content="Applying a bunch of data science measures to an entire business process led me to learn a lot about communicating data effectively.">
+		<meta property="twitter:url"
+		content="https://robdewit.nl/blog/lessons-learnt-forcing-data-science-measures-upon-my-colleagues/index.html">
+		<meta name="twitter:title" content="Lessons learnt forcing data science
+		measures upon my colleagues">
+		<meta name="twitter:description" content="Applying a bunch of data
+		science measures to an entire business process led me to learn a lot
+		about communicating data effectively.">
 		<meta name="twitter:image" content="">
 
 	</head>
 	<body>
 		<div class="container">
 			<div class="blogpost">
-				<span class="breadcrumbs"><a href="../../index.html">&lt&lt Back to homepage</a></span>
+				<span class="breadcrumbs"><a href="../../index.html">&lt&lt Back
+				to homepage</a></span>
 				<div class="header">
 					<h2 class="publishdate">2021-12-14</h2>
-					<h1 class="title">Lessons learnt forcing data science measures upon my colleagues</h1>
+					<h1 class="title">Lessons learnt forcing data science
+					measures upon my colleagues</h1>
 
-					<span class="keywords">Keywords: communication, explanation, classification measures</span>
+					<span class="keywords">Keywords: communication, explanation,
+					classification measures</span>
 				</div>
 
-				<p>While working at bol.com as a data analyst it fell upon me to revamp the KPIs of our team. There was a set of metrics in place from before I started working there, but they didn’t quite cut it anymore. While they provided basic and sometimes useful insights, they didn’t really allow the team to take meaningful action. Tasked with improving upon the existing KPIs, my thoughts landed upon a few classic data science measures. While implementing them was relatively straightforward, getting my colleagues onboard proved more challenging.</p>
+				<p>While working at bol.com as a data analyst it fell upon me to
+				revamp the KPIs of our team. There was a set of metrics in place
+				from before I started working there, but they didn’t quite cut
+				it anymore. While they provided basic and sometimes useful
+				insights, they didn’t really allow the team to take meaningful
+				action. Tasked with improving upon the existing KPIs, my
+				thoughts landed upon a few classic data science measures. While
+				implementing them was relatively straightforward, getting my
+				colleagues onboard proved more challenging.</p>
 
-				<p>One of the most important things we did as a team was make sure fraudulent orders were never shipped out. Sending items to fraudsters resulted in write-offs (i.e. lost money), which was of course something we desperately tried to avoid. Initially we used those write-offs as an indicator of our performance. The problem with this approach was twofold. Firstly, the write-offs could fluctuate due to circumstances outside of our control: one week you simply have more active fraudsters than the next. Secondly, optimising for this metric came — at least in theory — at the cost of preventing orders from legitimate customers. If we set out to eliminate write-offs completely, our easiest course of action would have been to not allow a single order. Needless to say this makes for a poor business model.</p>
+				<p>One of the most important things we did as a team was make
+				sure fraudulent orders were never shipped out. Sending items to
+				fraudsters resulted in write-offs (i.e. lost money), which was
+				of course something we desperately tried to avoid. Initially we
+				used those write-offs as an indicator of our performance. The
+				problem with this approach was twofold. Firstly, the write-offs
+				could fluctuate due to circumstances outside of our control: one
+				week you simply have more active fraudsters than the next.
+				Secondly, optimising for this metric came — at least in theory —
+				at the cost of preventing orders from legitimate customers. If
+				we set out to eliminate write-offs completely, our easiest
+				course of action would have been to not allow a single order.
+				Needless to say this makes for a poor business model.</p>
 
-				<p>So we needed a more sophisticated approach, and ideally a more sophisticated way of measuring our success. The attentive reader will have noticed that the process I described above is a textbook example of a <a href="https://en.wikipedia.org/wiki/Statistical_classification#Binary_and_multiclass_classification" target="_blank" rel="noreferrer">classification problem</a>. Orders are either legitimate or fraudulent, and we can either accept or reject them.</p>
+				<p>So we needed a more sophisticated approach, and ideally a
+				more sophisticated way of measuring our success. The attentive
+				reader will have noticed that the process I described above is a
+				textbook example of a <a
+				href="https://en.wikipedia.org/wiki/Statistical_classification#Binary_and_multiclass_classification"
+				target="_blank" rel="noreferrer">classification problem</a>.
+				Orders are either legitimate or fraudulent, and we can either
+				accept or reject them.</p>
 
-				<p>In data science there are four to ten main ways to <a href="https://towardsdatascience.com/performance-metrics-for-classification-machine-learning-problems-97e7e774a007" target="_blank" rel="noreferrer">measure the quality of your classifications</a>, depending on whom you ask. Here I will stick to the four I tend to use most often: accuracy, precision, recall, and F1. In the existing situation where we measured write-offs we had for all intents and purposes settled upon a recall score. When you compare the write-offs with the total sum of cancelled orders you can calculate your recall. On the other hand we were not paying too close attention to the precision of our classification (i.e. the rate of false positives; legitimate customers whose orders were cancelled). That left our quality assessment rather lopsided.</p>
+				<p>In data science there are four to ten main ways to <a
+				href="https://towardsdatascience.com/performance-metrics-for-classification-machine-learning-problems-97e7e774a007"
+				target="_blank" rel="noreferrer">measure the quality of your
+				classifications</a>, depending on whom you ask. Here I will
+				stick to the four I tend to use most often: accuracy, precision,
+				recall, and F1. In the existing situation where we measured
+				write-offs we had for all intents and purposes settled upon a
+				recall score. When you compare the write-offs with the total sum
+				of cancelled orders you can calculate your recall. On the other
+				hand we were not paying too close attention to the precision of
+				our classification (i.e. the rate of false positives; legitimate
+				customers whose orders were cancelled). That left our quality
+				assessment rather lopsided.</p>
 
-				<p>I therefore wanted to use a measure that combines both sides of the coin. While accuracy is an intuitive measure that in essence does so, it only really holds up when you have an even distribution. Fraud detection, however, is a classic example of a classification where you have an uneven distribution. Only a slim minority of your orders is actually placed by fraudsters, while the vast majority is placed by honest customers. You could accept each and every order, including those from fraudsters, and still end up with an accuracy of 0.999.</p>
+				<p>I therefore wanted to use a measure that combines both sides
+				of the coin. While accuracy is an intuitive measure that in
+				essence does so, it only really holds up when you have an even
+				distribution. Fraud detection, however, is a classic example of
+				a classification where you have an uneven distribution. Only a
+				slim minority of your orders is actually placed by fraudsters,
+				while the vast majority is placed by honest customers. You could
+				accept each and every order, including those from fraudsters,
+				and still end up with an accuracy of 0.999.</p>
 
-				<p>Given this it made sense to me to implement an F1 score as our KPI, which combines both precision and recall into one score. This allowed us to take the effects of both types of classification errors into consideration. A false negative resulted in a write-off and lower recall, while a false positive resulted in an angry customer and lower precision. Both lower precision and lower recall resulted in a lower F1 score.</p>
+				<p>Given this it made sense to me to implement an F1 score as
+				our KPI, which combines both precision and recall into one
+				score. This allowed us to take the effects of both types of
+				classification errors into consideration. A false negative
+				resulted in a write-off and lower recall, while a false positive
+				resulted in an angry customer and lower precision. Both lower
+				precision and lower recall resulted in a lower F1 score.</p>
 
-				<p>I would love to end this post here by stating that this new KPI solved all of our problems and we lived happily ever after. Truth be told, though, its implementation resulted in a few new challenges. While people with a background in data analysis/science/engineering are used to dealing with the measures I listed above, this is hardly the case for everyone else. As I mentioned accuracy is an intuitive measure; F1 is decidedly not that. While I stand by using an F1 score as our KPI, I cannot deny that this came at an initial cost to the interpretability of that KPI.</p>
+				<p>I would love to end this post here by stating that this new
+				KPI solved all of our problems and we lived happily ever after.
+				Truth be told, though, its implementation resulted in a few new
+				challenges. While people with a background in data
+				analysis/science/engineering are used to dealing with the
+				measures I listed above, this is hardly the case for everyone
+				else. As I mentioned accuracy is an intuitive measure; F1 is
+				decidedly not that. While I stand by using an F1 score as our
+				KPI, I cannot deny that this came at an initial cost to the
+				interpretability of that KPI.</p>
 
-				<p>And that realisation led me to learn a lot about communicating data. Getting everyone on board with the new KPI pushed me to explain data in a few ways that were new to me. There are three takeaways I would like to share from that learning process:</p>
+				<p>And that realisation led me to learn a lot about
+				communicating data. Getting everyone on board with the new KPI
+				pushed me to explain data in a few ways that were new to me.
+				There are three takeaways I would like to share from that
+				learning process:</p>
 
 				<div class="focuscontent">
 					<h3>1. Use analogies</h3>
 
-					<p>When throwing around terms such as <i>recall</i>, <i>type 1 error</i>, and <i>F1</i> people tend to get lost in the jargon. Using a simple but consistent analogy allowed me to reduce those terms to concrete concepts. In this case I used the analogy of a pond full of fish and junk throughout my entire explanation.</p>
+					<p>When throwing around terms such as <i>recall</i>, <i>type
+					1 error</i>, and <i>F1</i> people tend to get lost in the
+					jargon. Using a simple but consistent analogy allowed me to
+					reduce those terms to concrete concepts. In this case I used
+					the analogy of a pond full of fish and junk throughout my
+					entire explanation.</p>
 
-					<p>We wanted to keep the fish (= legitimate customers) swimming in the pond, while cleaning up the pieces of junk (= fraudsters). This translated, for example, false positives to dead fish, false negatives to junk left in the pond, and recall to the ratio of junk we managed to remove from the pond. I think analogies provide a mental anchor to go back to later, thus improving the memorability of your explanation. Later on, when discussing our KPIs, my colleagues would often refer back to the pond full of fish and junk.</p>
+					<p>We wanted to keep the fish (= legitimate customers)
+					swimming in the pond, while cleaning up the pieces of junk
+					(= fraudsters). This translated, for example, false
+					positives to dead fish, false negatives to junk left in the
+					pond, and recall to the ratio of junk we managed to remove
+					from the pond. I think analogies provide a mental anchor to
+					go back to later, thus improving the memorability of your
+					explanation. Later on, when discussing our KPIs, my
+					colleagues would often refer back to the pond full of fish
+					and junk.</p>
 
 					<div class="illustration">
-						<img src="./img/pond.jpg" alt="Drawing of a pond with 4 fish looking at a hook and an old boot at the bottom." />
-						<span class="subtext">A pond full of fish and shoes as an analogy for customers.</span>
+						<img src="./img/pond.jpg" alt="Drawing of a pond with 4
+						fish looking at a hook and an old boot at the bottom."
+						/>
+						<span class="subtext">A pond full of fish and shoes as
+						an analogy for customers.</span>
 					</div>
 
 					<h3>2. Use illustrations</h3>
 
-					<p>As a data analyst/scientist/engineer you probably know that the people around you prefer to look at data visualisations rather than the raw data. Visualisations are, after all, a great way to convey information. I have found that this not only holds true for visualisations of numbers and metrics, but also for concepts themselves.</p>
+					<p>As a data analyst/scientist/engineer you probably know
+					that the people around you prefer to look at data
+					visualisations rather than the raw data. Visualisations are,
+					after all, a great way to convey information. I have found
+					that this not only holds true for visualisations of numbers
+					and metrics, but also for concepts themselves.</p>
 
-					<p>For concepts we should probably use the term “illustration” rather than “visualisation”, but the idea behind it is the same. Showing your audience something that supports your explanation adds an extra dimension, thus improving learning effectiveness. When combined with the use of analogies, you can use illustrations to really stand out and ingrain your explanation. To misappropriate the classic film-making adagium: <a href="https://tvtropes.org/pmwiki/pmwiki.php/Main/ShowDontTell" target="_blank" rel="noreferrer">“show, don’t tell”</a>.</p>
+					<p>For concepts we should probably use the term
+					“illustration” rather than “visualisation”, but the idea
+					behind it is the same. Showing your audience something that
+					supports your explanation adds an extra dimension, thus
+					improving learning effectiveness. When combined with the use
+					of analogies, you can use illustrations to really stand out
+					and ingrain your explanation. To misappropriate the classic
+					film-making adagium: <a
+					href="https://tvtropes.org/pmwiki/pmwiki.php/Main/ShowDontTell"
+					target="_blank" rel="noreferrer">“show, don’t tell”</a>.</p>
 
-					<p>In this case I decided to draw the illustrations by hand. I got inspired to do so after following a workshop where some of the slides were hand-drawn. I’m not entirely sure why, but those really stood out to me and made the presentation more engaging. I will concede that this greatly increases the amount of work required, though. Especially when — like me — you’re not a great artist per se and keep redoing drawings.</p>
+					<p>In this case I decided to draw the illustrations by hand.
+					I got inspired to do so after following a workshop where
+					some of the slides were hand-drawn. I’m not entirely sure
+					why, but those really stood out to me and made the
+					presentation more engaging. I will concede that this greatly
+					increases the amount of work required, though. Especially
+					when — like me — you’re not a great artist per se and keep
+					redoing drawings.</p>
 
 					<div class="illustration">
-						<img src="./img/classification.jpg" alt="Drawing of red and green balls where a few balls have been circled as selected." />
-						<span class="subtext">Illustration of the correctness of selected items in classification.</span>
+						<img src="./img/classification.jpg" alt="Drawing of red
+						and green balls where a few balls have been circled as
+						selected." />
+						<span class="subtext">Illustration of the correctness of
+						selected items in classification.</span>
 					</div>
 
 					<h3>3. Use questions or exercises</h3>
 
-					<p>In my elementary school it was a staple of student presentations: the quiz at the end. I won’t advocate for confronting your audience with trivia questions that are meant to check whether they paid attention. Good questions or exercises can, however, be used effectively to let your audience reason through the materials you explained earlier. Moreover, they point out which concepts you didn’t explain well enough yet. This allows you to revisit those concepts and elaborate further upon them. Take the following question for example:</p>
+					<p>In my elementary school it was a staple of student
+					presentations: the quiz at the end. I won’t advocate for
+					confronting your audience with trivia questions that are
+					meant to check whether they paid attention. Good questions
+					or exercises can, however, be used effectively to let your
+					audience reason through the materials you explained earlier.
+					Moreover, they point out which concepts you didn’t explain
+					well enough yet. This allows you to revisit those concepts
+					and elaborate further upon them. Take the following question
+					for example:</p>
 
-					<span class="italic">“What happens to the junk in the pond when you improve your recall?”</span>
+					<span class="italic">“What happens to the junk in the pond
+					when you improve your recall?”</span>
 
-					<p>A question like this pushes your audience to reason through the relations between false negatives, true classifications, and the recall score. And if they go sideways in their reasoning, you know you should dive deeper into the topic.</p>
+					<p>A question like this pushes your audience to reason
+					through the relations between false negatives, true
+					classifications, and the recall score. And if they go
+					sideways in their reasoning, you know you should dive deeper
+					into the topic.</p>
 
 					<div class="illustration">
-						<img src="./img/quiz.jpg" alt="Drawing of a quiz show based on Who wants to be a millionaire?" />
-						<span class="subtext">Quiz questions at the end of a presentation to engage with the audience.</span>
+						<img src="./img/quiz.jpg" alt="Drawing of a quiz show
+						based on Who wants to be a millionaire?" />
+						<span class="subtext">Quiz questions at the end of a
+						presentation to engage with the audience.</span>
 					</div>
 
 				</div>
 
 				<h2>Conclusion</h2>
-				<p>Applying a bunch of data science measures to an entire business process led me to learn a lot about communicating data effectively. With a few years of education and/or experience in this field it can become easy to take a certain level of data literacy for granted. As practitioners we should not forget about that gap in expertise and assume that the data speaks for itself. I have fallen in this trap many times, and have seen others in our field do so as well.</p>
+				<p>Applying a bunch of data science measures to an entire
+				business process led me to learn a lot about communicating data
+				effectively. With a few years of education and/or experience in
+				this field it can become easy to take a certain level of data
+				literacy for granted. As practitioners we should not forget
+				about that gap in expertise and assume that the data speaks for
+				itself. I have fallen in this trap many times, and have seen
+				others in our field do so as well.</p>
 
-				<p>The ability to bridge that knowledge gap through solid communication might just be on of the core differences between a good data analyst/scientist/engineer and a great one. Although I am not even sure if the KPI I implemented is still in use, the experience provided me with a few extra tools in my communication arsenal. Even though that might not make me a great analyst/scientist/engineer yet, at least I am a better one for it.</p>
+				<p>The ability to bridge that knowledge gap through solid
+				communication might just be on of the core differences between a
+				good data analyst/scientist/engineer and a great one. Although I
+				am not even sure if the KPI I implemented is still in use, the
+				experience provided me with a few extra tools in my
+				communication arsenal. Even though that might not make me a
+				great analyst/scientist/engineer yet, at least I am a better one
+				for it.</p>
 
 				<div class="bio">
 					<div class="photograph">
-						<img src="../../images/foto.jpg" alt="This is me, Rob!" />
+						<img src="../../images/foto.jpg" alt="This is me, Rob!"
+						/>
 					</div>
 					<div class="description">
 						<h2>Rob de Wit</h2>
-						<p>I am interested in how people and organisations can get the most out of themselves. For this I see IT as a means to an end. I specifically commit to using data as a starting point for innovations and improvements.</p>
-						<p>Currently I am working as a data engineering consultant at <a href="https://nl.devoteam.com/" target="_blank" rel="noreferrer">Devoteam</a>.</p>
-						<span><a href="https://www.linkedin.com/in/rcdewit/" target="_blank" rel="noreferrer">linkedin.com/in/rcdewit</a></span>
+						<p>I am interested in how people and organisations can
+						get the most out of themselves. For this I see IT as a
+						means to an end. I specifically commit to using data as
+						a starting point for innovations and improvements.</p>
+						<p>Currently I am working as a data engineering
+						consultant at <a href="https://nl.devoteam.com/"
+						target="_blank" rel="noreferrer">Devoteam</a>.</p>
+						<span><a href="https://www.linkedin.com/in/rcdewit/"
+						target="_blank"
+						rel="noreferrer">linkedin.com/in/rcdewit</a></span>
 					</div>
 				</div>
 			</div>
