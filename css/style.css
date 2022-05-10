@@ -27,6 +27,11 @@ p {
 	line-height: 1.5;
 }
 
+li {
+	margin-bottom: 0.2rem;
+	line-height: 1.5;
+}
+
 a:link {
 	color: #f04;
 }
@@ -149,11 +154,11 @@ a:hover, a:visited  {
 
 	.column-header {
 			flex: 0 0 30%;
-			margin-right: 5em;
+			margin-right: 4em;
 	}
 
 	.column-details {
-		flex: 0 0 550px;
+		flex: 0 0 600px;
 	}
 }
 
