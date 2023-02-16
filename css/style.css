@@ -54,6 +54,13 @@ a:hover, a:visited  {
 	margin-bottom: 2.5em;
 }
 
+.highlight {
+	margin-top: 3rem;
+	padding: 1rem;
+	background-color:#eaeaea;
+	border-radius: 8px;
+}
+
 .blogpost {
 	max-width: 800px;
 	margin: auto;
