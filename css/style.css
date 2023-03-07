@@ -108,6 +108,24 @@ a:hover, a:visited  {
 	font-size: 85%;
 }
 
+.blogpost .banner {
+	text-align: center;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+
+.blogpost .banner img {
+	width: 120%;
+	border-radius: 8px;
+	margin-left: -10%;
+}
+
+.blogpost .banner .subtext {
+	display: block;
+	font-style: italic;
+	font-size: 85%;
+}
+
 .blogpost .bio {
 	margin-top: 3rem;
 	padding: 1rem;

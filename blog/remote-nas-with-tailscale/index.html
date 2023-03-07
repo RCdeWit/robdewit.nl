@@ -1,0 +1,253 @@
+<!-- Created by Rob C. de Wit 2021 -->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="Rob de Wit">
+		<title>Setting up a remote NAS with Tailscale to manage my photo
+		archives</title>
+		<link rel="stylesheet" href="../../css/style.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link
+		href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,700&display=swap"
+		rel="stylesheet">
+		<link
+		href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap"
+		rel="stylesheet">
+		<link rel="icon" href="data:image/svg+xml,<svg
+		xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text
+		y=%22.9em%22 font-size=%2290%22>🐘</text></svg>">
+
+		<!-- Metadata -->
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <meta name="description" content="I set up a NAS and configured Tailscale
+	  to finally reach the point where I am happy with how I manage my photo
+	  archives. Now I don't have any excuses to hold me from editing my backlog
+	  of vacation pictures.">
+	  <meta name="keywords" content="NAS, Synology, Tailscale, Lightroom, Plex,
+	  backups, infrastructure">
+      <meta name="publish_date" property="og:publish_date" content="2023-03-08">
+
+
+	  <!-- Open graph meta tags -->
+	  <meta property="og:url"
+	  content="https://robdewit.nl/blog/remote-nas-with-tailscale/">
+	  <meta property="og:type" content="blog">
+	  <meta property="og:title" content="Setting up a remote NAS with Tailscale
+	  to manage my photo archives">
+	  <meta property="og:site_name" content="Rob de Wit">
+	  <meta property="og:description" content="I set up a NAS and configured
+	  Tailscale to finally reach the point where I am happy with how I manage my
+	  photo archives. Now I don't have any excuses to hold me from editing my
+	  backlog of vacation pictures.">
+	  <meta property="og:image"
+	  content="https://robdewit.nl/blog/remote-nas-with-tailscale/img/og-image.jpg">
+
+		<!-- Twitter Meta Tags -->
+		<meta name="twitter:card" content="summary_large_image">
+		<meta property="twitter:domain" content="robdewit.nl">
+		<meta property="twitter:url"
+		content="https://robdewit.nl/blog/remote-nas-with-tailscale/index.html">
+		<meta name="twitter:title" content="A boring truth: your meeting needs
+		an agenda">
+		<meta name="twitter:description" content="I set up a NAS and configured
+		Tailscale to finally reach the point where I am happy with how I manage
+		my photo archives. Now I don't have any excuses to hold me from editing
+		my backlog of vacation pictures.">
+		<meta name="twitter:image" content="">
+
+	</head>
+	<body>
+		<div class="container">
+			<div class="blogpost">
+				<span class="breadcrumbs"><a href="../../index.html">&lt&lt Back
+				to homepage</a></span>
+				<div class="header">
+					<h2 class="publishdate">2023-03-08</h2>
+					<h1 class="title">Setting up a remote NAS with Tailscale to
+					manage my photo archives</h1>
+
+					<span class="keywords">Keywords: NAS, Synology, Tailscale,
+					Lightroom, Plex, photos, backups, infrastructure</span>
+				</div>
+
+				<div class="banner">
+					<img src="./img/patagonia.jpeg" alt="Photo of the author in
+					front of Las Torres del Paine in Chile" />
+					<span class="subtext">Just one of the many photos in my
+					backlog: sunrise at Las Torres del Paine</span>
+				</div>
+
+				<p>As a <a
+				href="https://www.linkedin.com/feed/update/urn:li:activity:7031979898067935233/"
+				target="_b ">fresh victim</a> of the recent tech layoffs, I
+				suddenly found myself with a lot of time to work on hobby
+				projects. One hobby I have recently been neglecting is
+				photography. Shooting the photos was never the issue, but
+				sorting and editing them certainly is. My recent trip to Chile
+				(five stars, had a blast) resulted in about 4000 new photos that
+				needed a bit of work. To make matters worse, I still needed to
+				edit the album of my summer holiday with Alma. At least now I
+				had the time to dive into this properly!</p>
+
+				<p>So what did I do first? Start working on my storage and
+				backups, of course. Over the past ten years or so, my collection
+				of data has steadily grown to a few terabytes, most of which
+				entails photos and videos. I am not one to easily throw away
+				data, which has made it progressively more challenging to manage
+				my storage of those data.</p>
+
+				<p>Thus far, I have been managing with two external HDDs, a
+				backup of all of my raw photos and videos to Stack, and all
+				sorted material to Google Photos, iCloud, and YouTube. Keeping
+				all of these in sync proved to be a challenge, and as a result,
+				I didn't always keep proper backups. I had a bit of a scare when
+				Veracrypt failed to decrypt my primary HDD a while back, and
+				although I managed to fix this, I resolved to set up a better
+				system for myself.</p>
+
+				<h2>Hardware setup</h2>
+
+				<p>After some deliberation, I got a NAS with four disks that I
+				installed at my office. I set up three disks in <a
+				href="https://en.wikipedia.org/wiki/Standard_RAID_levels"
+				target="_blank">RAID5</a>, with the last disk as a hot spare.
+				For those who don't know, in a RAID5 storage pool, one disk can
+				break without you losing any data. The NAS I bought (<a
+				href="https://www.synology.com/en-global/products/DS1522+"
+				target="_blank">Synology DS1522+</a>) will automatically start
+				using the hot spare in case that happens and bring the fault
+				tolerance back up to one drive. From here, I can periodically
+				(manually) create back-ups to an external HDD I keep at home. I
+				also sync the most important data (sorted and edited photos and
+				videos) to Google's and Apple's clouds with <a
+				href="https://www.synology.com/en-global/dsm/feature/cloud_sync"
+				target="_blank">Synology Cloud Sync</a>.</p>
+
+				<p>Is it perfect? No. Two disks could fail at once, my NAS could
+				get stolen, I could lose the encryption keys, or Utrecht could
+				get nuked. Is it good enough for me? Yes. It provides a happy
+				medium between certainty and convenience. In my old situation,
+				the certainty was affected by the inconvenience of copying data,
+				which caused me not to make backups as often as I should have.
+				For now, I am happy with my setup.</p>
+
+				<p>While my RAW photos are stored on the NAS, Lightroom needs
+				its catalog to be on a local device to work properly. I use
+				Synology's <a
+				href="https://kb.synology.com/en-global/DSM/help/SynologyDrive/drive_desc?version=7"
+				target="b ">Drive Server</a> and <a
+				href="https://kb.synology.com/en-global/DSM/help/SynologyDriveClient/synologydriveclient?version=7"
+				target="_ ">Drive Client</a> to automatically sync my Lightroom
+				catalogs between my laptop and the NAS. It might be quicker to
+				keep a local copy of the photos as well, but as it stands, the
+				read/write speed isn't the bottleneck in my editing process.</p>
+
+				<h2>Remote access with Tailscale</h2>
+
+				<p>After setting up the hardware and transferring my data to the
+				server, I had to ensure I could access the server from anywhere.
+				The easiest solution for this seemed to be <a
+				href="https://tailscale.com/" target="_blank">Tailscale</a>,
+				which lets you set up a virtual private network (VPN). Using
+				Tailscale saved me the hassle of port forwarding, which probably
+				wouldn't work without the appropriate permissions for the
+				network in my office building.</p>
+
+				<p>The NAS, my laptop, phone, and home computer are now all part
+				of the VPN, so I can access all devices as if they were
+				connected to the same WiFi. This doesn't only work for accessing
+				all of my photos but also for my next hobby project: running a
+				<a href="https://www.plex.tv/" target="_blank">Plex</a> media
+				server.</p>
+
+				<p>Setting up Tailscale was surprisingly easy: I created an
+				account, downloaded the app on all my devices, and was good to
+				go. The only time I used my CLI was when generating a TLS
+				certificate. While this step was not strictly necessary, it
+				prevents the annoying "this connection is not secure" warnings
+				when accessing the virtual desktop environment of the NAS from
+				my browser.</p>
+
+				<h2>Step-by-step instructions</h2>
+
+				<p>In case you're interested in creating a similar setup, here's
+				a step-by-step guide (based on the Synology hardware):</p>
+				
+				<ol>
+					<li>Install the disks, plug in your NAS, and follow the
+					installation wizard.</li>
+					<li><a
+					href="https://kb.synology.com/en-global/DSM/help/DSM/StorageManager/storage_pool_create_storage_pool?version=7"
+					target=" ">Create a storage pool</a> with your required
+					specs (for me: RAID5 with one hot spare).</li>
+					<li><a
+					href="https://kb.synology.com/en-global/DSM/help/DSM/AdminCenter/file_share_create?version=7"
+					target="_blank">Create a shared folder</a> (and enable
+					encryption).</li>
+					<li>Set up Synology Drive Server on the NAS and Synology
+					Drive Client on your computer to sync your Lightroom catalog
+					(or catalogs) between the machines.</li>
+					<li>Set up <a href =
+					"https://kb.synology.com/en-global/DSM/help/CloudSync/cloudsync?version=7"
+					target="_blank">Cloud Sync</a> to create backups of your
+					data to the clouds you want (I only did this for my most
+					critical data to mitigate costs).</li>
+					<li><a href="https://tailscale.com/" target="_blank">Create
+					a Tailscale account.</a></li>
+					<li><a href="https://tailscale.com/download/" target="_bla
+					">Install Tailscale</a> on the NAS and any devices on which
+					you want to access your data.</li>
+					<li>In the <a
+					href="https://login.tailscale.com/admin/machines"
+					target="_blank">Tailscale admin console</a>, navigate to
+					DNS, generate a Tailnet name, and enable MagicDNS. This way,
+					you can access devices using machine names instead of IP
+					addresses.</li>
+					<li>On the DNS page, also enable HTTPS.</li>
+					<li>SSH into the NAS from your terminal and run <code>sudo
+					tailscale cert</code> to generate a public certificate (I
+					<a
+					href="https://kb.synology.com/en-id/DSM/tutorial/How_to_login_to_DSM_with_root_permission_via_SSH_Telnet"
+					target="_blank">enabled SSH</a> for this and disabled it
+					afterward).</li>
+				</ol>
+
+				<p>That's all there is to it! Again, I am pleasantly surprised
+				by how easy this was to configure, especially the networking
+				aspect with Tailscale. Now there is nothing to hold me back from
+				finally starting on my photo backlog!</p>
+
+				<p>Unless... It could be fun to set up Plex first...</p>
+
+				<p><b>Disclosures: </b>This blog post is —sadly— not sponsored
+				by Synology or Tailscale. If anyone from either company is
+				reading this: call me!</p>
+
+				<div class="bio">
+					<div class="photograph">
+						<img src="../../images/photo.jpg" alt="This is me, Rob!"
+						/>
+					</div>
+					<div class="description">
+						<h2>Rob de Wit</h2>
+						<p>I am interested in how people and organisations can
+						get the most out of themselves. For this I see IT as a
+						means to an end. I specifically commit to using data as
+						a starting point for innovations and improvements.</p>
+						<p>Most recently I worked as a developer advocate at <a
+						href="https://iterative.ai/" target="_blank"
+						rel="noreferrer">Iterative</a>. Right now I am open to
+						new opportunities.</p>
+						<span><a href="https://www.linkedin.com/in/rcdewit/"
+						target="_blank"
+						rel="noreferrer">linkedin.com/in/rcdewit</a></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
