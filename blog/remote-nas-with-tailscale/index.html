@@ -91,7 +91,7 @@
 				(five stars, had a blast) resulted in about 4000 new photos that
 				needed a bit of work. To make matters worse, I still needed to
 				edit the album of my summer holiday with Alma. At least now I
-				had the time to dive into this properly!</p>
+				had the time to dive into this properly.</p>
 
 				<p>So what did I do first? Start working on my storage and
 				backups, of course. Over the past ten years or so, my collection
@@ -101,13 +101,14 @@
 				my storage of those data.</p>
 
 				<p>Thus far, I have been managing with two external HDDs, a
-				backup of all of my raw photos and videos to Stack, and all
-				sorted material to Google Photos, iCloud, and YouTube. Keeping
-				all of these in sync proved to be a challenge, and as a result,
-				I didn't always keep proper backups. I had a bit of a scare when
-				Veracrypt failed to decrypt my primary HDD a while back, and
-				although I managed to fix this, I resolved to set up a better
-				system for myself.</p>
+				backup of all of my raw photos and videos to <a
+				href="https://www.transip.nl/stack" target="_blank">TransIP
+				Stack</a>, and all sorted material to Google Photos, iCloud, and
+				YouTube. Keeping everything in sync proved to be a challenge. As
+				a result, I didn't always keep proper backups. I had a bit of a
+				scare recently when Veracrypt failed to decrypt my primary HDD,
+				and although I managed to fix this, I resolved to set up a
+				better system for myself.</p>
 
 				<h2>Hardware setup</h2>
 
@@ -120,20 +121,12 @@
 				href="https://www.synology.com/en-global/products/DS1522+"
 				target="_blank">Synology DS1522+</a>) will automatically start
 				using the hot spare in case that happens and bring the fault
-				tolerance back up to one drive. From here, I can periodically
+				tolerance back up to one disk. From here, I can periodically
 				(manually) create back-ups to an external HDD I keep at home. I
 				also sync the most important data (sorted and edited photos and
 				videos) to Google's and Apple's clouds with <a
 				href="https://www.synology.com/en-global/dsm/feature/cloud_sync"
 				target="_blank">Synology Cloud Sync</a>.</p>
-
-				<p>Is it perfect? No. Two disks could fail at once, my NAS could
-				get stolen, I could lose the encryption keys, or Utrecht could
-				get nuked. Is it good enough for me? Yes. It provides a happy
-				medium between certainty and convenience. In my old situation,
-				the certainty was affected by the inconvenience of copying data,
-				which caused me not to make backups as often as I should have.
-				For now, I am happy with my setup.</p>
 
 				<p>While my RAW photos are stored on the NAS, Lightroom needs
 				its catalog to be on a local device to work properly. I use
@@ -145,6 +138,14 @@
 				catalogs between my laptop and the NAS. It might be quicker to
 				keep a local copy of the photos as well, but as it stands, the
 				read/write speed isn't the bottleneck in my editing process.</p>
+
+				<p>Is it perfect? No. Two disks could fail at once, my NAS could
+				get stolen, I could lose the encryption keys, or Utrecht could
+				get nuked. Is it good enough for me? Yes. It provides a happy
+				medium between certainty and convenience. In my old situation,
+				the certainty was affected by the inconvenience of copying data,
+				which caused me not to make backups as often as I should have.
+				For now, I am happy with my setup.</p>
 
 				<h2>Remote access with Tailscale</h2>
 
@@ -168,7 +169,7 @@
 					<img src="./img/diagram.png" alt="Diagram showing the
 					connections between the author's home, office, and cloud."
 					/>
-					<!-- <span class="subtext"></span> -->
+					<span class="subtext">Visual representation of my new setup</span>
 				</div>
 
 				<p>Setting up Tailscale was surprisingly easy: I created an
@@ -182,7 +183,8 @@
 				<h2>Step-by-step instructions</h2>
 
 				<p>In case you're interested in creating a similar setup, here's
-				a step-by-step guide (based on the Synology hardware):</p>
+				a step-by-step guide. It's based on Synology hardware, but a
+				similar approach should be feasible with any NAS.</p>
 				
 				<ol>
 					<li>Install the disks, plug in your NAS, and follow the
@@ -195,14 +197,18 @@
 					href="https://kb.synology.com/en-global/DSM/help/DSM/AdminCenter/file_share_create?version=7"
 					target="_blank">Create a shared folder</a> (and enable
 					encryption).</li>
-					<li>Set up Synology Drive Server on the NAS and Synology
-					Drive Client on your computer to sync your Lightroom catalog
-					(or catalogs) between the machines.</li>
+					<li>Set up <a
+					href="https://kb.synology.com/en-global/DSM/help/SynologyDrive/drive_desc?version=7"
+					target="b ">Synology Drive Server</a> on the NAS and <a
+					href="https://kb.synology.com/en-global/DSM/help/SynologyDriveClient/synologydriveclient?version=7"
+					target="_ ">Synology Drive Client</a> on your computer to
+					sync your Lightroom catalog (or catalogs) between the
+					machines.</li>
 					<li>Set up <a href =
 					"https://kb.synology.com/en-global/DSM/help/CloudSync/cloudsync?version=7"
-					target="_blank">Cloud Sync</a> to create backups of your
-					data to the clouds you want (I only did this for my most
-					critical data to mitigate costs).</li>
+					target="_blank">Synology Cloud Sync</a> to create backups of
+					your data to the clouds you want (I only did this for my
+					most critical data to mitigate costs).</li>
 					<li><a href="https://tailscale.com/" target="_blank">Create
 					a Tailscale account.</a></li>
 					<li><a href="https://tailscale.com/download/" target="_bla
@@ -223,16 +229,17 @@
 					afterward).</li>
 				</ol>
 
-				<p>That's all there is to it! Again, I am pleasantly surprised
-				by how easy this was to configure, especially the networking
-				aspect with Tailscale. Now there is nothing to hold me back from
-				finally starting on my photo backlog!</p>
+				<p>That's all there is to it! Again, I was pleasantly surprised
+				by how easy this was to configure. Especially the networking
+				aspect with Tailscale was far more straightforward than I had
+				anticipated. Now there is nothing to hold me back from finally
+				starting on my photo backlog!</p>
 
 				<p>Unless... It could be fun to set up Plex first...</p>
 
 				<p><b>Disclosures: </b>This blog post is —sadly— not sponsored
 				by Synology or Tailscale. If anyone from either company is
-				reading this: call me!</p>
+				reading this: give me a call!</p>
 
 				<div class="bio">
 					<div class="photograph">
