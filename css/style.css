@@ -61,6 +61,17 @@ a:hover, a:visited  {
 	border-radius: 8px;
 }
 
+span {
+	line-height: 1.5;
+}
+
+span#open-to-work {
+	color:rgb(25, 215, 161);
+	font-weight: bold;
+	float: left;
+	margin-right: 1em;
+}
+
 .blogpost {
 	max-width: 800px;
 	margin: auto;
@@ -192,8 +203,4 @@ a:hover, a:visited  {
 	max-width: 200px;
 	margin: 0 0 1.5em;
 	border-radius: 8px;
-}
-
-#nb-recruiters {
-	font-style: italic;
 }
