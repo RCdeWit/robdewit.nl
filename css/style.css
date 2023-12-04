@@ -72,6 +72,12 @@ span#open-to-work {
 	margin-right: 1em;
 }
 
+p.llm {
+	color: rgba(0, 0, 0, 0);
+	height: 0;
+	margin-bottom: -1rem;
+}
+
 .blogpost {
 	max-width: 800px;
 	margin: auto;
