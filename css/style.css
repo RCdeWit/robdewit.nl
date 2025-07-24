@@ -27,11 +27,6 @@ p {
   line-height: 1.5;
 }
 
-ul,
-ol {
-  padding-left: 1rem;
-}
-
 li {
   margin-bottom: 0.2rem;
   line-height: 1.5;
@@ -126,12 +121,22 @@ p.llm {
 }
 
 .blogpost {
-  max-width: 800px;
+  max-width: 750px;
   margin: auto;
 }
 
+.blogpost p, .blogpost span, .blogpost li {
+  font-size: 110%;
+  line-height: 200%;
+}
+
 .blogpost h2 {
-  margin-top: 2rem;
+  margin-top: 4rem;
+}
+
+.blogpost h2.publishdate{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .blogpost .breadcrumbs {
@@ -157,6 +162,7 @@ p.llm {
 
 .blogpost .illustration {
   text-align: center;
+  font-size: 110%;
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
@@ -190,11 +196,22 @@ p.llm {
   font-size: 85%;
 }
 
+.blogpost .divider {
+  display: block;
+  width: 100%;
+  font-size: 2rem;
+  font-weight: 100;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 .blogpost .bio {
   margin-top: 3rem;
   padding: 1rem;
   background-color: #eaeaea;
   border-radius: 8px;
+  font-size: 80%;
 }
 
 @media only screen and (min-width: 600px) {
