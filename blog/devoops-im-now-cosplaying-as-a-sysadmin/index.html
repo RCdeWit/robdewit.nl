@@ -1,0 +1,328 @@
+<!-- Created by Rob C. de Wit 2021 -->
+
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Rob de Wit-Liezenga" />
+    <title>DevOops... I'm now cosplaying as a sysadmin</title>
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg
+		xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text
+		y=%22.9em%22 font-size=%2290%22>🐘</text></svg>"
+    />
+
+    <!-- Metadata -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="How my journey into self-hosting (d)evolved into infrastructure-as-code and CI/CD pipelines."
+    />
+    <meta
+      name="keywords"
+      content="Terraform, PyInfra, Tailscale, GitHub Actions, CICD, NAS, backups, infrastructure"
+    />
+    <meta name="publish_date" property="og:publish_date" content="2025-07-24" />
+
+    <!-- Open graph meta tags -->
+    <meta
+      property="og:url"
+      content="https://robdewit.nl/blog/remote-nas-with-tailscale/"
+    />
+    <meta property="og:type" content="blog" />
+    <meta
+      property="og:title"
+      content="DevOops... I'm now cosplaying as a sysadmin"
+    />
+    <meta property="og:site_name" content="Rob de Wit-Liezenga" />
+    <meta
+      property="og:description"
+      content="How my journey into self-hosting (d)evolved into infrastructure-as-code and CI/CD pipelines."
+    />
+    <meta
+      property="og:image"
+      content="https://robdewit.nl/blog/devoops-im-now-cosplaying-as-a-sysadmin/img/og-image.png"
+    />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="robdewit.nl" />
+    <meta
+      property="twitter:url"
+      content="https://robdewit.nl/blog/devoops-im-now-cosplaying-as-a-sysadmin/index.html"
+    />
+    <meta
+      name="twitter:title"
+      content="DevOops... I'm now cosplaying as a sysadmin"
+    />
+    <meta
+      name="twitter:description"
+      content="How my journey into self-hosting (d)evolved into infrastructure-as-code and CI/CD pipelines."
+    />
+    <meta name="twitter:image" content="" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="blogpost">
+        <span class="breadcrumbs"
+          ><a href="../../index.html">&lt&lt Back to homepage</a></span
+        >
+        <div class="header">
+          <h2 class="publishdate">2025-07-24</h2>
+          <h1 class="title">DevOops… I'm now cosplaying as a sysadmin</h1>
+
+          <span class="keywords"
+            >Keywords: Terraform, PyInfra, Tailscale, GitHub Actions, CICD, NAS,
+            infrastructure</span
+          >
+        </div>
+
+        <p>
+          For over two years now, I've been hard at work to wrestle control over
+          my online life back from tech giants.
+          <a
+            href="https://robdewit.nl/blog/remote-nas-with-tailscale/"
+            target="_blank"
+            >Getting a NAS</a
+          >
+          was the kick-off to a never-ending project in self-hosting that has
+          taught me a great deal about IT and infrastructure. And I've grown
+          increasingly confident in taking responsibility for my own online
+          self.
+        </p>
+
+        <p>
+          While I still rely on third parties like Proton, a considerable part
+          of my digital life is now fully self-managed. Photos, documents,
+          bookmarks, identity: there are
+          <a
+            href="https://github.com/awesome-selfhosted/awesome-selfhosted"
+            target="_blank"
+            >amazing open-source solutions</a
+          >
+          for pretty much everything. Aside from the obvious privacy benefits,
+          it's also quite liberating. If you don't like the way your email or
+          photo archive works, just get a new one!
+        </p>
+
+        <div class="illustration">
+          <img src="./img/network.png" alt="Diagram of my VPN setup." />
+          <span class="subtext"
+            >All services live within my Tailnet (VPN) and a select few are
+            accessible through a reverse proxy</span
+          >
+        </div>
+
+        <p>
+          To some — including my ex-girlfriend¹— this endless tinkering sounds
+          exhausting. And I agree that it can be a bit stressful to worry about
+          your own upgrades and backups. Nonetheless, it pays off to have a full
+          picture of where your data lives and which services you use. And I've
+          learned a great deal about DevOps principles that help out in my work.
+        </p>
+
+        <p>
+          With the constant changes to my stack, it's become increasingly
+          important to manage everything in a structured manner. That's why my
+          goal is to implement everything as Infrastructure-as-Code (IaC). I
+          heavily rely on two tools here: Terraform to provision resources and
+          PyInfra to configure them. Beyond that, I use GitHub Actions for my
+          CI/CD.
+        </p>
+
+        <h2>Terraform</h2>
+
+        <p>
+          Previously,
+          <a
+            href="https://robdewit.nl/blog/remote-nas-with-tailscale/"
+            target="_blank"
+            >I wrote</a
+          >
+          about how I use Tailscale on a daily basis. Ever since, I've only
+          become a much bigger fan. In addition to my own hardware, I now use a
+          VPS as a reverse proxy to access my photos and drive over the public
+          internet. The term <i>reverse proxy</i> was a bit confusing to me when
+          I started out. In short, it's a server that's within my VPN but also
+          accessible to visitors not connected to my VPN.
+        </p>
+
+        <p>
+          This setup allows me to share documents and albums with friends,
+          family, and colleagues. Tailscale allows the reverse proxy to connect
+          directly to the necessary services — and only to those services.
+        </p>
+
+        <p>
+          Whenever I add a new service to my stack, I can generate an Access
+          Control List (ACL) that controls the traffic between my NAS and
+          reverse proxy. With Terraform, I can track changes to this file and
+          automatically roll them out when needed.
+        </p>
+
+        <p>
+          Of course, the reverse proxy itself is also managed with Terraform. I
+          previously hosted it on Digital Ocean, but recently switched to
+          Hetzner (cheaper and EU-based). Swapping out a few Terraform resources
+          was a breeze, and within an hour I had a new VPS up and running. That
+          included signing up for a Hetzner account.
+        </p>
+
+        <h2>PyInfra</h2>
+
+        <p>
+          Of course, a VPS by itself doesn't do much: I still needed to
+          configure it to serve as my reverse proxy. On Digital Ocean, I had
+          configured
+          <a href="https://caddyserver.com/" target="_blank">Caddy</a> to
+          fulfill this job and route all requests to the right service on my
+          NAS. Porting this over was also a few minutes work, because of
+          <a href="https://pyinfra.com/" target="_blank">PyInfra</a>.
+        </p>
+
+        <p>
+          PyInfra basically lets you define a series of commands to execute on a
+          machine. While Terraform is declarative (“I want these components to
+          exist”), PyInfra is imperative (“Take these steps to achieve this
+          configuration”). Because I'd captured the commands to set up my
+          reverse proxy in a few PyInfra scripts, I could simply run those
+          scripts on my new VPS and get the exact same configuration.
+        </p>
+
+        <div class="illustration">
+          <img
+            src="./img/pipeline.png"
+            alt="Diagram showing a pipeline with init, generate, provision, and configure as stages. ACL, VPS, and Config are the respective outputs for the last three stages."
+          />
+          <span class="subtext"
+            >Factual representation of what a GitHub Actions Workflow looks
+            like</span
+          >
+        </div>
+
+        <h2>GitHub Actions</h2>
+
+        <p>
+          Between Terraform and PyInfra, I can fully configure access to my
+          self-hosted services. However, I'm prone to making errors when I run a
+          bunch of commands. Recently I took the time to set up a true pipeline
+          (or <i>workflow</i>) with GitHub Actions. Now, I'm finally at a point
+          where I'm happy with the entire setup.
+        </p>
+
+        <p>Making changes broadly looks like this:</p>
+
+        <ol>
+          <li>Make changes to my Terraform and/or PyInfra config</li>
+          <li>
+            Commit and push the changes to my <code>infra</code> repository
+          </li>
+          <li>Wait for the deployment to finish</li>
+        </ol>
+
+        <p>
+          Of course, the pipeline itself required a bit of setup. You can
+          <a
+            href="https://github.com/RCdeWit/infra/blob/main/.github/workflows/deploy.yml"
+            target="_blank"
+            >find the configuration itself here</a
+          >, but it broadly does the following:
+        </p>
+
+        <ol>
+          <li>Install dependencies on runner²</li>
+          <li>Generate my config files for Tailscale and Caddy</li>
+          <li>Validate Terraform plan against the existing state</li>
+          <li>Provision and destroy resources if needed</li>
+          <li>Extract the IP for the VPS that will host the reverse proxy</li>
+          <li>SSH into the VPS</li>
+          <li>Execute PyInfra commands to roll out Caddy</li>
+        </ol>
+
+        <p>
+          With all of this running automatically when I change a file or two, I
+          don't have to worry about forgetting a command or making a typo
+          somewhere. And I can always look up how my stack is configured,
+          because the entire configuration is captured in a bunch of text files.
+        </p>
+
+        <h2>Conclusions</h2>
+
+        <p>
+          What started out as hosting my own photo archives, has (d)evolved into
+          cosplaying as a sysadmin. Between Terraform, PyInfra, and GitHub
+          Actions, I have all the tools I need for a reasonably robust
+          deployment pipeline. This gives me the confidence to increasingly
+          self-host aspects of my digital life: photos, documents, bookmarks,
+          identity management, and who knows what's next?
+        </p>
+
+        <p>
+          As always, there's still room for improvement. While I manage my
+          services with distinct <code>docker-compose</code> files, I currently
+          only manage those files within Portainer. My next project will be to
+          capture them as part of my <code>infra</code> repository. And the
+          subsequent project will be to set up automated deployments for my
+          containers as well.
+        </p>
+
+        <p>
+          Lastly, there's the configuration of my NAS itself. Synology provides
+          a great way to get started, but most of my config has been click-ops'd
+          together. If my NAS is stolen or spontaneously bursts into flames, I
+          don't have a way to easily replicate my setup — aside from restoring a
+          backup, of course. At some point, it would be great to replace my NAS
+          with a Proxmox or TrueNAS setup.
+        </p>
+
+        <p>
+          But at that point, I'm unsure whether I'm still <i>cosplaying</i> as a
+          sysadmin…
+        </p>
+
+        <span class="divider">. . .</span>
+
+        <p>¹ Now wife ❤</p>
+        <p>² I.e., the computer that executes the pipeline on your behalf</p>
+
+        <div class="bio">
+          <div class="photograph">
+            <img src="../../images/photo.jpg" alt="This is me, Rob!" />
+          </div>
+          <div class="description">
+            <h2>Rob de Wit-Liezenga</h2>
+            <p>
+              I like working with data and tech to help people solve problems.
+              Although I am comfortable with the "harder" aspects of data
+              engineering and data science, I firmly believe that tech shouldn't
+              be self-serving. What I like doing best is connecting with people,
+              sharing knowledge, and discovering how data can help improve life
+              and work.
+            </p>
+            <span
+              ><a
+                href="https://www.linkedin.com/in/rcdewit/"
+                target="_blank"
+                rel="noreferrer"
+                >linkedin.com/in/rcdewit</a
+              ></span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
