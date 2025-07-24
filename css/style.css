@@ -27,6 +27,11 @@ p {
   line-height: 1.5;
 }
 
+ul,
+ol {
+  padding-left: 1rem;
+}
+
 li {
   margin-bottom: 0.2rem;
   line-height: 1.5;
