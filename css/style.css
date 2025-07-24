@@ -19,7 +19,7 @@ h1 {
 h2 {
   font-family: "Merriweather", serif;
   font-size: 150%;
-  margin: 0rem 0 1rem;
+  margin: 0rem;
 }
 
 p {
@@ -55,6 +55,12 @@ a:visited {
   margin-bottom: 2.5em;
 }
 
+.about-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .highlight {
   margin-top: 3rem;
   padding: 1rem;
@@ -73,6 +79,7 @@ span#emoji{
 }
 
 .open-to-work {
+  float: right;
   background-color: #cbe2cb;
   padding: 0.1rem 1rem 0.1rem 1rem;
 }
