@@ -41,6 +41,13 @@ a:visited {
   color: #7209b7;
 }
 
+code {
+  display: inline-block;
+  background-color: #efefef;
+  padding-left: .5rem;
+  padding-right: .5rem;
+}
+
 .container {
   text-align: left;
   margin: 5%;
@@ -127,6 +134,7 @@ p.llm {
 
 .blogpost p,
 .blogpost span,
+.blogpost code,
 .blogpost li {
   font-size: 110%;
   line-height: 200%;
