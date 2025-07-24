@@ -61,7 +61,7 @@ a:visited {
   align-items: center;
 }
 
-span#emoji{
+span#emoji {
   line-height: 1.5;
   font-size: 200%;
   letter-spacing: 1rem;
@@ -79,40 +79,40 @@ span#emoji{
   padding: 0.1rem 1rem 0.1rem 1rem;
 }
 
-  .blog-label {
-    display: inline-block;
-    font-size: 0.75rem;
-    font-weight: 600;
-    padding: 2px 6px;
-    border-radius: 4px;
-    color: white;
-    width: 55px;
-    text-align: center;
-    flex-shrink: 0;
-  }
+.blog-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: white;
+  width: 55px;
+  text-align: center;
+  flex-shrink: 0;
+}
 
-  .label-personal {
-    background-color: #e96464;
-  }
+.label-personal {
+  background-color: #e96464;
+}
 
-  .label-y42 {
-    background-color: #94cf7f;
-  }
+.label-y42 {
+  background-color: #94cf7f;
+}
 
-  .label-iterative {
-    background-color: #6590b2;
-  }
+.label-iterative {
+  background-color: #6590b2;
+}
 
-  .blog-entry {
-    display: flex;
-    align-items: baseline;
-    gap: 1rem;
-    margin-bottom: 0.5rem;
-  }
+.blog-entry {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
 
-  .blog-entry a {
-    text-decoration: none;
-  }
+.blog-entry a {
+  text-decoration: none;
+}
 
 p.llm {
   color: rgba(0, 0, 0, 0);
