@@ -1,4 +1,8 @@
-/* Professional page styles */
+:root {
+  --link-color: #cf042c;
+  --link-hover-color: #670916;
+  --divider-color: #f7bc53;
+}
 
 html {
   background-color: #f4f4f0;
@@ -14,8 +18,6 @@ body {
   font-family: "DM Sans", sans-serif;
   color: #111111;
   background-color: transparent;
-  margin: auto;
-  max-width: 1140px;
 }
 
 h1 {
@@ -43,64 +45,6 @@ h3 {
   text-transform: uppercase;
   letter-spacing: 0.02em;
   margin: 0 0 0.5em;
-}
-
-p {
-  margin-bottom: 1em;
-  line-height: 1.5;
-}
-
-li {
-  margin-bottom: 0.2rem;
-  line-height: 1.5;
-  list-style-type: square;
-}
-
-a:link {
-  color: #cf042c;
-}
-
-a:hover,
-a:visited {
-  color: #670916;
-}
-
-code {
-  display: inline-block;
-  background-color: rgba(0, 0, 0, 0.06);
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-
-.container {
-  text-align: left;
-  margin: 3%;
-}
-
-.column-header {
-  text-align: center;
-  margin-bottom: 3.5em;
-}
-
-.about-entry {
-  padding-bottom: 2.5em;
-}
-
-.about-entry + .about-entry {
-  border-top: 1px solid #f7bc53;
-  padding-top: 2.5em;
-}
-
-.about-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-span#emoji {
-  line-height: 1.5;
-  font-size: 200%;
-  letter-spacing: 1rem;
 }
 
 #stack {
@@ -154,8 +98,6 @@ p.llm {
   height: 0;
   margin-bottom: -1rem;
 }
-
-/* ─── Blog post pages ──────────────────────────────────────────── */
 
 .blogpost {
   max-width: 750px;
@@ -255,8 +197,6 @@ p.llm {
   margin: 0;
 }
 
-/* ─── Responsive ───────────────────────────────────────────────── */
-
 @media only screen and (min-width: 600px) {
   .blogpost .bio {
     display: flex;
@@ -285,30 +225,6 @@ p.llm {
 }
 
 @media only screen and (min-width: 1140px) {
-  .container {
-    margin: 2%;
-  }
-
-  .container#bio {
-    display: flex;
-    align-items: flex-start;
-  }
-
-  .column-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-right: 4em;
-    margin-bottom: 0;
-  }
-
-  .column-header h1 {
-    writing-mode: vertical-rl;
-    margin: 1.5rem 0 0 0;
-    text-align: left;
-  }
-
   .column-header .name-first {
     font-size: clamp(3rem, 3.2vw, 3.8rem);
   }
@@ -316,14 +232,4 @@ p.llm {
   .column-header .name-last {
     font-size: clamp(1.8rem, 2.4vw, 2.8rem);
   }
-
-  .column-details {
-    flex: 0 0 600px;
-  }
-}
-
-#profile-picture {
-  width: 100%;
-  max-width: 200px;
-  margin: 0 0 1.5em;
 }
