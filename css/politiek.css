@@ -1,0 +1,160 @@
+/* PRO (Progressief Nederland) page theme */
+
+:root {
+  --link-color: #a30000;
+  --link-hover-color: #7a0000;
+  --divider-color: #aaee77;
+}
+
+html,
+body {
+  background-color: transparent;
+  max-width: none;
+  margin: 0;
+}
+
+body {
+  font-family: "Work Sans", sans-serif;
+  font-size: 112%;
+  color: #111111;
+}
+
+h1 {
+  font-family: "Anton", "Oswald", sans-serif;
+  font-weight: 400;
+  font-size: clamp(2rem, 7vw, 4.75rem);
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  color: #ff0000;
+  margin: 0 0 0.5rem;
+}
+
+h2 {
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  font-size: 150%;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+h3 {
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  font-size: 125%;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  margin: 0 0 0.5em;
+}
+
+.pro-header {
+  background-color: #ddffdd;
+  padding: 3.5rem 1.5rem;
+  text-align: center;
+}
+
+.pro-header-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.pro-header-subtitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+}
+
+.pro-header-subtitle h2 {
+  font-size: clamp(1.5rem, 4.5vw, 2.75rem);
+}
+
+.pro-rose {
+  height: clamp(1.5rem, 4.5vw, 2.75rem);
+  width: auto;
+  flex-shrink: 0;
+}
+
+#profile-picture {
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto 1.5em;
+}
+
+.pro-band {
+  padding: 3.5rem 1.5rem;
+}
+
+.pro-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+  overflow-wrap: break-word;
+}
+
+.pro-band--pink {
+  position: relative;
+  background-color: #ffaacc;
+  overflow: hidden;
+}
+
+.pro-band--pink::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #ffddee;
+  clip-path: polygon(0% 100%, 100% 0%, 100% 100%);
+}
+
+.pro-band--mint {
+  background-color: #ddffdd;
+}
+
+.pro-band--white {
+  background-color: #ffffff;
+}
+
+.pro-band--stripe {
+  background-color: #aaee77;
+  background-image: linear-gradient(90deg, #00aa00 50%, transparent 50%);
+  background-size: 140px 100%;
+  background-repeat: repeat;
+  padding: 4.5rem 1.5rem;
+}
+
+.pro-card {
+  background-color: #ffffff;
+  padding: 2.5rem 2rem;
+}
+
+.pro-card-text {
+  min-width: 0;
+}
+
+@media only screen and (min-width: 600px) {
+  .pro-header {
+    padding: 4.5rem 1.5rem;
+  }
+
+  .pro-band {
+    padding: 4.5rem 1.5rem;
+  }
+
+  .pro-band--stripe {
+    padding: 5.5rem 1.5rem;
+  }
+
+  .pro-card {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 3rem 3.5rem;
+  }
+
+  .pro-card #profile-picture {
+    margin: 0;
+    flex: 0 0 auto;
+  }
+}

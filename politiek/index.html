@@ -1,5 +1,3 @@
-<!-- Created by Rob C. de Wit 2021 -->
-
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="nl">
   <head>
@@ -11,27 +9,9 @@
     />
     <meta name="author" content="Rob de Wit-Liezenga" />
     <title>Rob de Wit-Liezenga - raadslid Utrechtse Heuvelrug</title>
+    <link rel="stylesheet" href="../css/fonts.css" />
     <link rel="stylesheet" href="../css/style.css" />
-    <style>
-      a:link {
-        color: #2b6b2b;
-      }
-
-      a:hover,
-      a:visited {
-        color: #1a3d1a;
-      }
-    </style>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="../css/politiek.css" />
     <link
       rel="icon"
       href="data:image/svg+xml,<svg
@@ -40,69 +20,73 @@
     />
   </head>
   <body>
-    <div class="container" id="bio">
-      <div class="column-header">
-        <img
-          id="profile-picture"
-          src="../images/photo.jpg"
-          alt="Dit ben ik, Rob!"
-        />
+    <header class="pro-header">
+      <div class="pro-header-inner">
         <h1 title="Mijn tweede voornaam is Cornelis.">Rob de Wit-Liezenga</h1>
-        <h2>Utrechtse Heuvelrug</h2>
+        <div class="pro-header-subtitle">
+          <img class="pro-rose" src="../images/pro-rose.svg" alt="" />
+          <h2>PRO Heuvelrug</h2>
+        </div>
       </div>
-      <div class="column-details">
-        <div class="about-entry">
+    </header>
+
+    <main>
+      <section class="pro-band pro-band--pink">
+        <div class="pro-inner">
           <h2>Over mij</h2>
 
           <p>
             Ik ben Rob de Wit-Liezenga, raadslid voor
-            <a href="https://groenlinkspvda-uh.nl/" target="_blank"
-              >GroenLinks-PvdA</a
-            >
-            in de gemeente Utrechtse Heuvelrug. Ik woon en werk in Utrecht, maar
-            de Heuvelrug is de plek waar ik me thuis voel — in het bos, op de
-            hei, en nu ook in de raadszaal.
+            <a
+              href="https://utrechtseheuvelrug.progressiefnederland.nl/"
+              target="_blank"
+              >PRO Heuvelrug</a
+            >. Ik werk in Utrecht, maar Driebergen is de plek waar ik me thuis
+            voel. Niet alleen thuis en in het bos, maar nu ook in de
+            gemeenteraad. Ik ben er trots op dat ik namens PRO Heuvelrug mag
+            meedenken over de toekomst van onze gemeente.
           </p>
 
           <p>
-            Van beroep ben ik software-engineer en dataspecialist. Ik geloof dat
-            technologie en data mensen kunnen helpen betere beslissingen te
-            nemen — ook in de politiek. Die overtuiging neem ik mee naar de
-            gemeenteraad.
+            Van beroep ben ik zelfstandig software engineer. Het leuke aan mijn
+            werk is dat je altijd kijkt hoe dingen beter kunnen werken. Dat doe
+            ik dus al digitaal, maar nu ook in de echte wereld. Als raadslid zet
+            ik me in voor een sociale en groene gemeente, waar iedereen zich
+            thuis kan voelen.
           </p>
 
           <p>
             Ik stel graag de vraag "Waarom?" en ik hoor liever niet "Omdat we
-            het altijd zo gedaan hebben." Dat geldt voor mijn werk als engineer,
-            maar net zo goed voor de lokale politiek.
+            het altijd zo gedaan hebben." Dat geldt voor mijn werk als IT'er,
+            maar misschien nog wel meer als volksvertegenwoordiger.
           </p>
         </div>
+      </section>
 
-        <div class="about-entry">
+      <section class="pro-band pro-band--mint">
+        <div class="pro-inner">
           <div class="about-header">
             <h2>Nu</h2>
           </div>
 
           <p>
-            Sinds maart 2026 zit ik namens GroenLinks-PvdA in de gemeenteraad
-            van Utrechtse Heuvelrug. Daarnaast ben ik bestuurslid van
-            <a
-              href="https://provincieutrecht.groenlinks.nl/onze-mensen"
-              target="_blank"
-              >GroenLinks Provincie Utrecht</a
-            >.
+            Sinds april 2026 zit ik namens PRO Heuvelrug in de gemeenteraad van
+            Utrechtse Heuvelrug.
           </p>
 
           <p>
-            Buiten de politiek werk ik als freelance engineer en geniet ik van
-            fotograferen, wandelen, klimmen en Spaans leren. Samen met mijn
-            partner heb ik een erg levendige Wheaten Terriër.
+            Buiten de politiek werk ik als
+            <a href="https://binary3.dev" target="_blank">freelance engineer</a>
+            en geniet ik van fotograferen, wandelen, klimmen en Spaans leren.
+            Samen met mijn partner heb ik een erg enthousiaste Wheaten Terriër.
           </p>
 
           <span id="emoji">💚🌳🏘️🚲♻️</span>
         </div>
+      </section>
 
-        <div class="about-entry">
+      <section class="pro-band pro-band--white">
+        <div class="pro-inner">
           <h2>Thema's</h2>
           <p>
             Dit zijn de onderwerpen waar ik mij als raadslid sterk voor maak:
@@ -110,49 +94,67 @@
 
           <ul>
             <li>
+              <b>Wonen</b> — betaalbare woningen voor starters, gezinnen en
+              ouderen. Villa's hebben we al genoeg, maar de tijd dat alleen de
+              rijke mensen uit Amsterdam en Utrecht hier een tweede huis konden
+              kopen is voorbij.
+            </li>
+            <li>
               <b>Natuur en landschap</b> — de Utrechtse Heuvelrug is een
               bijzonder stuk Nederland. Dat beschermen we samen, voor nu en voor
-              later.
+              later. Niet alleen voor de inwoners, maar ook voor alle dieren die
+              hier in het bos leven.
             </li>
             <li>
-              <b>Duurzaamheid en klimaat</b> — de gemeente kan het goede
-              voorbeeld geven: in energiegebruik, mobiliteit en de gebouwde
-              omgeving.
+              <b>Duurzaamheid en klimaat</b> — we merken de gevolgen van
+              klimaatverandering al. De gemeente kan het goede voorbeeld geven:
+              in energiegebruik, waterverbruik, mobiliteit, en hoe we bouwen.
             </li>
             <li>
-              <b>Wonen</b> — betaalbare woningen voor starters en mensen met een
-              middeninkomen. De Heuvelrug moet een plek blijven waar iedereen
-              terecht kan.
-            </li>
-            <li>
-              <b>Openbaar vervoer en mobiliteit</b> — goede verbindingen tussen
-              de kernen en minder autoafhankelijkheid, ook op de Heuvelrug.
+              <b>Openbaar vervoer en mobiliteit</b> — onze dorpen worden fijner
+              als er meer ruimte is voor voetgangers en fietsers, en minder voor
+              auto's. Iedereen kan veilig fietsen of wandelen naar school, werk,
+              of de supermarkt. En tussen onze dorpen zijn goede
+              OV-verbindingen.
             </li>
             <li>
               <b>Transparantie</b> — de gemeente werkt voor alle inwoners. Ik
-              zet mij in voor heldere communicatie en echte inspraak.
+              zet mij in voor heldere communicatie en een benaderbare politiek.
             </li>
           </ul>
         </div>
+      </section>
 
-        <div class="about-entry">
-          <h2>Contact</h2>
-          <p>Wil je in contact komen? Dat kan via:</p>
+      <section class="pro-band pro-band--stripe">
+        <div class="pro-inner">
+          <div class="pro-card">
+            <img
+              id="profile-picture"
+              src="../images/photo.jpg"
+              alt="Dit ben ik!"
+            />
+            <div class="pro-card-text">
+              <h2>Contact</h2>
+              <p>Wil je in contact komen? Dat kan via:</p>
 
-          <ul>
-            <li>
-              <a href="mailto:hello@robdewit.nl" target="_blank"
-                >hello@robdewit.nl</a
-              >
-            </li>
-            <li>
-              <a href="https://groenlinkspvda-uh.nl/" target="_blank"
-                >groenlinkspvda-uh.nl</a
-              >
-            </li>
-          </ul>
+              <ul>
+                <li>
+                  <a href="mailto:heuvelrug@robdewit.nl" target="_blank"
+                    >heuvelrug@robdewit.nl</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://utrechtseheuvelrug.progressiefnederland.nl/"
+                    target="_blank"
+                    >progressiefnederland.nl</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   </body>
 </html>
