@@ -1,7 +1,7 @@
 /* PRO (Progressief Nederland) page theme */
 
 :root {
-  --link-color: #a30000;
+  --link-color: #cc0000;
   --link-hover-color: #7a0000;
   --divider-color: #aaee77;
 }
@@ -82,6 +82,15 @@ h3 {
   margin: 0 auto 1.5em;
 }
 
+ul {
+  padding-left: 0;
+  list-style-position: inside;
+}
+
+li {
+  margin-bottom: 1rem;
+}
+
 .pro-band {
   padding: 3.5rem 1.5rem;
 }
@@ -106,6 +115,10 @@ h3 {
   inset: 0;
   background-color: #ffddee;
   clip-path: polygon(0% 100%, 100% 0%, 100% 100%);
+}
+
+.pro-band--pink a:link {
+  color: #a30000;
 }
 
 .pro-band--mint {
